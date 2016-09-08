@@ -2,10 +2,8 @@
  * Created by Jerry on 16/4/18.
  */
 var Service = {
-  //host:'http://218.90.150.118:3003/',
-  host:'http://192.168.40.137:3001/',
-  //host:'http://10.211.55.6:3001/',
-  //host:'http://nodejs-xxx.bjdv:3001/',
+  
+  host:'http://yourhostname/',
   getPhoneBooks: 'phoneBooks/loadStuff',
   getPhoneBooksPos: 'phoneBooks/loadStuffWithPos',
     loadStuffById: 'phoneBooks/loadStuffById',
