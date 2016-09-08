@@ -1,0 +1,513 @@
+/**
+ * Created by Jerry on 16/4/18.
+ */
+import React ,{StyleSheet,PixelRatio} from 'react-native'
+
+//var Util = require("../common/Util");
+import Util from '../common/Util'
+
+
+
+ const styles = StyleSheet.create({
+  //indexheader
+      flex:{
+        flex: 1,
+      },
+     borderTopCCC:{
+         borderTopColor: '#CCCCCC', borderTopWidth:Util.pixel,
+     },
+     borderBottomCCC:{
+         borderBottomColor: '#CCCCCC', borderBottomWidth:Util.pixel,
+     },
+     marginTop25:{
+         marginTop:25
+     },
+     marginTop10:{
+         marginTop:10
+     },
+     marginLeft10:{
+         marginLeft:10
+     },
+     backgroundFFF:{
+         backgroundColor:"#fff"
+     },
+      tabItemBg:{
+        backgroundColor:"#F2F5FA"
+      },
+      container: {
+        flex: 1,
+        marginTop:25,
+        flexDirection:'row',
+
+      },
+      searchCon:{
+        flex: 1,
+        flexDirection:'row',
+        width:88,
+        paddingRight:10,
+        justifyContent:'flex-end',
+        alignItems:'center',
+        height:44
+      },
+      header:{
+        height:44,
+        backgroundColor:'#009AF1',
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
+      },
+     headerMsg:{
+         height:44,
+         backgroundColor:'#009AF1',
+         flex:1,
+         flexDirection:'row',
+         justifyContent:'center',
+         alignItems:'center'
+     },
+     headerMsgTxt:{
+         fontSize:18,
+         color:"#fff",
+         textAlign:'center'
+     },
+      headerBtn:{
+        width:44,
+        height:44,
+        justifyContent:'center',
+        alignItems:'center'
+      },
+      headerTxt:{
+        fontSize:18,
+        color:"#fff",
+        paddingLeft:15,
+
+      },
+     headerTxtBtn:{
+         width:64,
+         height:44,
+         justifyContent:'center',
+         alignItems:'center'
+     },
+     headerTxtBtntxt:{
+         fontSize:14,color:"#fff"
+     },
+      //列表
+      stuffCon:{
+        //flex:1,
+        flexDirection:'row',
+        //paddingTop:7,
+        flexWrap:'wrap',
+        paddingLeft:7,
+          
+      },
+      stuffList:{
+        //height:138,
+        //width:111,
+        borderWidth:Util.pixel,
+        borderColor:"#e3e3e3",
+        padding:5,
+        borderRadius:3,
+        flex:1,
+        justifyContent:'center',
+        flexDirection:'column',
+        alignItems:'center',
+        marginTop:7,
+        marginRight:6,
+        backgroundColor:'#fff'
+      },
+      stuffImgRad:{
+        //borderTopLeftRadius:3,
+        //borderTopRightRadius:3,
+        resizeMode: 'cover',
+        height:103
+      },
+      stuffImgView:{
+        height:103
+      },
+      stuffInfo:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        marginTop:8,
+        paddingLeft:3,
+        paddingRight:3
+        //width:103,
+      },
+      stuffName:{
+        fontSize:15,
+        color:'#000'
+      },
+      stuffPos:{
+        fontSize:12,
+        color:'#00b1fd'
+      },
+      /*Text List*/
+      stuffTextListCon:{
+          height:66,
+          borderBottomWidth:Util.pixel,
+          borderBottomColor:'#CCCCCC',
+          backgroundColor:'#fff',
+          flex:1,
+          justifyContent:'space-between',
+          flexDirection:'row',
+          alignItems:'center',
+          paddingLeft:10,
+          paddingRight:10
+      },
+     stuffTextImgCon:{
+         width:48,height:48,borderRadius:25,borderColor:'#f2f5fa',borderWidth:Util.pixel,
+     },
+     stuffTextNoImgCon:{
+         width:48,height:48,borderRadius:25,backgroundColor:'#009AF1',justifyContent:'center',alignItems:'center'
+     },
+     stuffTextNoImgTxt:{
+         color:'#fff',fontSize:18
+     },
+     stuffTextImg:{
+         resizeMode:"cover",width:48,height:48,borderRadius:25
+     },
+     stuffStautsTxtCon:{
+         width:38,
+         height:20,
+         borderRadius:18,
+         backgroundColor:'#D9F3FF',
+         alignItems:'center'
+     },
+     stuffStautsTxt:{
+         color:'#00B1FD',
+         textAlign:'center',
+         lineHeight:16
+
+     },
+     stuffStautsIconCon:{
+         width:80,height:66,justifyContent:'space-between',alignItems:'center',flexDirection:'row'
+     },
+     stuffStautsTelCon:{
+         width:66,height:66,justifyContent:'center',alignItems:'center'
+     },
+     stuffStautsIconPhone:{
+         width:20,height:20,resizeMode:"cover"
+     },
+     stuffTextLeft:{
+         flexDirection:'row',
+         height:66,
+         alignItems:'center',
+     },
+     stuffTexttxtCon:{
+         height:66,
+         alignItems:'flex-start',justifyContent:'center',marginLeft:5
+     },
+     stuffTexttxtConTop:{
+         flexDirection:'row',
+         alignItems:'flex-end'
+     },
+     stuffTextName:{
+         fontSize:16,color:'#000'
+     },
+     stuffTexpos:{
+         fontSize:12,color:"#999",marginLeft:5
+     },
+     stuffTextPhone:{
+         fontSize:18,color:'#777',marginTop:5
+     },
+     // MsgList
+     msgListCon:{
+         backgroundColor:'#fff',height:60,borderBottomWidth:Util.pixel,borderBottomColor:'#CCCCCC',
+         flexDirection:'row',
+     },
+     msgListLeft:{
+        width:60,height:60,alignItems:'center',justifyContent:'center'
+     },
+     msgListImgCon:{
+         width:40,height:40,borderRadius:30
+     },
+     msgListImg:{
+         width:40,height:40,resizeMode:'cover'
+     },
+     msgListDge:{
+         width:14,height:14,borderRadius:7,alignItems:'center',justifyContent:'center',top:0,right:0,
+         backgroundColor:'#f34141',position: 'absolute'
+     },
+     msgListDgeTxt:{
+         color:'#fff',fontSize:10
+     },
+     msgListRight:{
+         flex:1,paddingRight:10,paddingLeft:10
+     },
+     msgListTitleCon:{
+        flexDirection:'row',justifyContent:'space-between',paddingTop:11
+     },
+     msgListUsername:{
+         fontSize:16,color:'#000'
+     },
+     msgListdatetime:{
+        fontSize:10,color:'#bbb'
+     },
+     msgListIntrCon:{
+         paddingTop:8
+     },
+     msgListIntrConTxt:{
+         fontSize:14,color:"#999"
+     },
+    //myCenter
+     myCenterImgbg:{
+         height:250,resizeMode:'cover',alignItems:'center',justifyContent:'center',width:Util.size.width
+     },
+     myCenterHeader:{
+         height:250,flex:1,alignItems:'center',justifyContent:'center'
+     },
+     myCenterAvatar:{
+         width:115,height:115,borderRadius:57.5
+     },
+     myCenterAvatarImg:{
+         width:115,height:115,resizeMode:'cover',borderRadius:57.5
+     },
+     myCenterName:{
+         fontSize:20,color:"#fff",marginTop:12,backgroundColor:'transparent'
+     },
+     myCenterPos:{
+         fontSize:14,color:"#fff",marginTop:4,backgroundColor:'transparent'
+     },
+     myCenterMain:{
+         height:90,paddingTop:20,paddingBottom:14,justifyContent:'center',alignItems:'center',backgroundColor:'#fff',
+         borderBottomColor: '#CCC', borderBottomWidth:Util.pixel,
+     },
+     myCenterStatusCon:{
+         flexDirection:'row',justifyContent:'space-between',width:280,paddingBottom:5
+     },
+     myCenterStatus:{
+         fontSize:14,color:'#333'
+     },
+     myCenterImgStatusCon:{
+        justifyContent:'center'
+     },
+     myCenterImgCon:{
+         width:271,height:35,resizeMode:'contain', flexDirection:'row',justifyContent:'center'
+     },
+     myCenterImg:{
+         width:35,height:35,resizeMode:'contain'
+     },
+     myCenterImg1:{
+         position:'absolute',left:-6,
+     },
+     myCenterImg2:{
+         position:'absolute',right:-6,
+     },
+     myCenterImgStatusConIn:{
+         width:271, flexDirection:'row',justifyContent:'center', position:'absolute',top:0
+     },
+     //moreInfo
+     linksNormal:{
+
+     },
+     linksLists:{
+         flexDirection:'row',justifyContent:'space-between',paddingLeft:15,paddingRight:15,flexWrap: 'nowrap',
+         borderBottomColor:'#CCCCCC',borderBottomWidth:Util.pixel,height:52,alignItems:'center'
+     },
+     linksListsLeft:{
+         flex:1,flexDirection:'row',justifyContent:'flex-start',flexWrap: 'nowrap',height:52,alignItems:'center'
+     },
+     linksListsRightIcon:{
+         width:20,
+         height:52,
+         justifyContent:'center',
+         alignItems:'center'
+     },
+     linksGroup:{
+         marginTop:10, borderTopColor: '#CCCCCC', borderTopWidth:Util.pixel,
+     },
+     linksLabelLeft:{
+         width:70,marginRight:15,fontSize:16,color:'#000',alignItems:'center',
+
+     },
+     linksLabelCenter:{
+         fontSize:16,color:'#000',width:Util.size.width - 155
+     },
+     listsAvatar:{
+         height:90
+     },
+     listsAvatarRight:{
+         flexDirection:'row',justifyContent:'flex-end',flexWrap: 'nowrap',height:90,alignItems:'center'
+     },
+     listsAvatarImg:{
+         width:70,height:70,borderRadius:35,resizeMode:'cover',marginRight:15
+     },
+     //stuffDetail
+     stuffDetailAvatar:{
+         padding:15,flexDirection:'row',justifyContent:'flex-start',flexWrap: 'nowrap',alignItems:'center',
+         borderBottomColor: '#CCCCCC', borderBottomWidth:Util.pixel,backgroundColor:"#fff"
+     },
+     stuffDetailAvatarImg:{
+         width:80,height:80,resizeMode:'cover',borderRadius:5,marginRight:15
+     },
+     stuffDetailAvatarRight:{
+         
+     },
+     stuffDetailAvatarRightName:{
+         flexDirection:'row',justifyContent:'flex-start',flexWrap: 'nowrap',alignItems:'center'
+     },
+     stuffDetailAvatarRightNameTxt:{
+         fontSize:20,color:'#000'
+     },
+     stuffDetailAvatarRightPos:{
+         marginTop:10
+     },
+     stuffDetailAvatarRightPosTxt:{
+         fontSize:15,color:'#666'
+     },
+     stuffDetailTelCon:{
+         flexDirection:'row',justifyContent:'flex-start',flexWrap: 'nowrap',alignItems:'center',
+         paddingLeft:15,paddingRight:15,height:48,backgroundColor:"#fff"
+     },
+     stuffDetailTelLabel:{
+         fontSize:16,color:'#000'
+     },
+     stuffDetailTel:{
+         fontSize:17,color:'#009fe8',marginLeft:30
+     },
+     stuffDetailBtnsCon:{
+         height:60,flexDirection:'row',flexWrap: 'nowrap',alignItems:'center',backgroundColor:"#fff"
+     },
+     stuffDetailBtnsTel:{
+         width:(Util.size.width / 2 ) - Util.pixel,borderRightWidth:Util.pixel,borderRightColor:'#cccccc' ,flexDirection:'row',
+         justifyContent:'center', flexWrap: 'nowrap',alignItems:'center',height:60,backgroundColor:"#fff"
+     },
+     stuffDetailBtnsTelImg:{
+         width:40,height:40,borderRadius:20,marginRight:15
+     },
+     stuffDetailMsgTel:{
+         width:(Util.size.width / 2 ),flexDirection:'row', justifyContent:'center', flexWrap: 'nowrap',alignItems:'center',
+         height:60,backgroundColor:"#fff"
+     },
+     //Login
+     loginCon:{
+         flex:1,justifyContent:'space-between',flexDirection:'column',alignItems:'stretch',backgroundColor:'#F2F5FA'
+     },
+     loginAvatar:{
+        alignItems:'center',justifyContent:'center',flex:1
+     },
+     loginAvatarImg:{
+         width:90,height:90,borderRadius:45,
+     },
+     loginCenter:{
+         flex:1
+     },
+     loginBottom:{
+        flex:1,justifyContent:'flex-end',paddingBottom:30,paddingRight:10,paddingLeft:10
+     },
+     loginFormList:{
+         borderBottomColor:'#ccc',borderBottomWidth:Util.pixel,backgroundColor:'#fff',height:54,flexDirection:'row',
+         flexWrap:'nowrap',alignItems:'center',paddingLeft:15,paddingRight:15
+     },
+     loginFormListImg:{
+         width:24,height:24,resizeMode:'cover'
+     },
+     loginFormInput:{
+         flex:1,height:54,fontSize:15,marginLeft:15
+     },
+     loginFormTxt:{
+         marginTop:15,paddingLeft:10,paddingRight:10,flexDirection:'row',justifyContent:'space-between',
+         alignItems:'center'
+     },
+     loginFormTxtIn:{
+         fontSize:14,color:'#778a8e'
+     },
+     loginFormBtn:{
+         backgroundColor:'#0096EA',flex:1,height:44,alignItems:'center',justifyContent:'center',borderRadius:3
+     },
+     loginFormBtnCon:{
+        flex:1, marginTop:15,paddingLeft:10,paddingRight:10,height:44,
+     },
+     loginFormBtnTxt:{
+         color:'#fff',fontSize:18
+     },
+     loginBottomTextCon:{
+        borderBottomColor:'#ccc',borderBottomWidth:Util.pixel,height:24,
+     },
+     loginBottomText:{
+         padding:5,backgroundColor:'#F2F5FA',fontSize:12,color:'#999',
+     },
+     loginBottomTextOv:{
+         justifyContent:'center',flexDirection:'row',marginTop:-12
+     },
+     loginFormReg:{
+         backgroundColor:'#fff',flex:1,height:44,alignItems:'center',justifyContent:'center',borderRadius:3,borderColor:'#ccc',borderWidth:Util.pixel
+     },
+     loginFormRegTxt:{
+         color:'#FF6C6B',fontSize:18
+     },
+     loadingView:{
+         flex:1,justifyContent:'center',alignItems:'center',position:'absolute',top:0,left:0,width:Util.size.width,height:Util.size.height,backgroundColor:'rgba(0,0,0,0.3)'
+     },
+     loadingViewIndex:{
+         flex:1,justifyContent:'center',alignItems:'center',position:'absolute',top:0,left:0,width:Util.size.width,height:Util.size.height,backgroundColor:'rgba(0,0,0,0.1)'
+     },
+     loadingViewMain:{
+         flex:1,justifyContent:'center',alignItems:'center',position:'absolute',top:0,left:0,width:Util.size.width,height:Util.size.height,backgroundColor:'rgba(0,0,0,0.1)'
+     },
+     loadingViewMainTextCon:{
+         justifyContent:'center',alignItems:'center'
+     },
+     loadingViewMainText:{
+         fontSize:12,color:'#333'
+     },
+     myCenterQuit:{
+         flex:1,justifyContent:'center',alignItems:'center',height:45, backgroundColor:'#fff',borderBottomColor:'#ccc',borderBottomWidth:Util.pixel,borderTopColor:'#ccc',borderTopWidth:Util.pixel
+     },
+     myCenterQuitText:{
+         color:'#d42321',fontSize:16
+     },
+     posHeader:{
+         padding:10,backgroundColor:'#fff',borderBottomColor:'#999',borderBottomWidth:Util.pixel
+     },
+     posHeaderText:{
+         fontSize:18,color:'#000'
+     },
+     newsDetailTitle:{
+         padding:10,borderBottomColor:'#ccc',borderBottomWidth:Util.pixel
+     },
+     newsDetailTitleTxt:{
+         fontSize:20,color:'#333',fontWeight:'bold'
+     },
+     newsDetailPubInfo:{
+         justifyContent:'flex-end',flexDirection:'row',alignItems:'center',marginTop:10
+     },
+     newsDetailPubInfoText:{
+         fontSize:9,color:'#999',marginLeft:10
+     },
+     newsDetailPubContent:{
+         padding:10,
+     },
+     newsDetailPubContentTxt:{
+         fontSize:12,color:'#666'
+     },
+     searchHeader:{
+         height:44,
+         backgroundColor:'#009AF1',
+         flex:1,
+         flexDirection:'row',
+         justifyContent:'flex-start',
+         alignItems:'center',paddingRight:15
+     },
+     searchInput:{
+        height:30,justifyContent:'center',alignItems:'center',backgroundColor:'#fff',flex:1,borderRadius:5
+     },
+     searchFormInput:{
+        height:30,fontSize:15,marginLeft:15,flex:1
+     },
+     avatarImgCon:{
+         backgroundColor:'#000',flex:1
+     },
+     introView:{
+         backgroundColor:'#fff',marginTop:10,borderBottomColor:'#ccc',borderBottomWidth:Util.pixel,borderTopColor:'#ccc',borderTopWidth:Util.pixel
+     },
+     introInput:{
+         height:100,fontSize:14,color:'#666',padding:5
+     }
+
+
+
+});
+
+module.exports = styles;

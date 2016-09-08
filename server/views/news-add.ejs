@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通讯录列表</title>
+    <% include common/cssRes.ejs %>
+</head>
+
+<body>
+
+<div id="wrapper">
+    <!--左侧菜单-->
+    <% include common/leftNav.ejs %>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="请输入关键字搜索" class="form-control"
+                                   name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading pt20">
+            <div class="col-lg-12">
+                <!--<h2>Data Tables</h2>-->
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="/">系统首页</a>
+                    </li>
+                    <li>
+                        <a>新闻管理</a>
+                    </li>
+                    <li class="active">
+                        <strong>添加新闻</strong>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox-content">
+                        <form class="form-horizontal" id="addNews" enctype='multipart/form-data' data-validator-option="{stopOnError:false, timely:true}">
+                            <p>请输入要添加的员工的相关信息</p>
+                            <div class="form-group mt20">
+                                <label class="col-md-2 control-label" >新闻标题:</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="newstitle" placeholder="请输入新闻标题" class="form-control" data-rule="required;length[0~20]">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">新闻类型:</label>
+                                <div class="col-md-8">
+                                    <select name="newstype" class="form-control" id=""  data-rule="required">
+                                        <option selected value="公司新闻">公司新闻</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">新闻内容:</label>
+                                <div class="col-md-8">
+                                    <textarea name="newsContent" id="" class="form-control newsContent" data-rule="required"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-8">
+                                    <button class="btn  btn-primary" id="saveStuff" type="button">保存</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include common/footer.ejs %>
+
+    </div>
+</div>
+
+
+<% include common/jsRes.ejs %>
+<!-- Page-Level Scripts -->
+
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        var $form = $("#addNews");
+        $form.validator();
+
+        $("#addNews").on("click",function () {
+
+            $form.isValid(function(v){
+               if(v){
+                   $form.ajaxSubmit({
+                       type:'post',
+                       url:'/news/addnewsJson',
+                       dataType:'json',
+                       clearForm:true,
+                       success:function (data) {
+                           if(data){
+                               if(data.stauts =='OK'){
+                                   swal({
+                                       title: "添加成功!",
+                                       text: "",
+                                       type: "success"
+                                   },function () {
+                                       setTimeout(function(){
+                                           window.location.reload();
+                                       },100)
+                                   });
+
+                               }
+                           }
+                       }
+
+                   })
+               }
+            });
+
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,12 @@
+/*
+自定义样式*/
+@charset "UTF-8";
+
+.chart-Large{width:100%;height:500px;}
+.realTimeTable{width:100%;height:300px;overflow:auto;}
+.realTimeTable table tr.oldData td{color:#999 !important;}
+.realTimeTable table tr td{ color:#333 !important;}
+.realTimeTable table tr td strong{ color:#ed5565 !important;}
+.realTimeTable table tr.oldData td strong{ font-weight:normal;color:#999 !important;}
+
+.newsContent{height: 300px !important; padding:10px; border-radius:3px;}

@@ -1,0 +1,60 @@
+{
+  "name": "forms",
+  "version": "0.7.2",
+  "description": "Generate amazing React Native forms in a breeze",
+  "main": "index.ios.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelCereda/react-native-form-generator.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "forms",
+    "input",
+    "react",
+    "native"
+  ],
+  "author": {
+    "name": "Michael Cereda",
+    "url": "info@michaelcereda.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelCereda/react-native-form-generator/issues"
+  },
+  "homepage": "https://github.com/MichaelCereda/react-native-form-generator#readme",
+  "dependencies": {},
+  "_id": "react-native-form-generator@0.7.2",
+  "_shasum": "04bd0fbf0f3cb25c0942e617b52b72a8ab9351ec",
+  "_from": "react-native-form-generator@latest",
+  "_npmVersion": "3.7.3",
+  "_nodeVersion": "5.8.0",
+  "_npmUser": {
+    "name": "cmyklove",
+    "email": "info@cmyklove.com"
+  },
+  "dist": {
+    "shasum": "04bd0fbf0f3cb25c0942e617b52b72a8ab9351ec",
+    "size": 9633,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/react-native-form-generator/download/react-native-form-generator-0.7.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "cmyklove",
+      "email": "info@cmyklove.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/react-native-form-generator-0.7.2.tgz_1459423215774_0.6381053410004824"
+  },
+  "directories": {},
+  "publish_time": 1459423218016,
+  "_cnpm_publish_time": 1459423218016,
+  "_resolved": "https://registry.npm.taobao.org/react-native-form-generator/download/react-native-form-generator-0.7.2.tgz"
+}
